@@ -14,6 +14,9 @@ export class MediaComponent implements OnInit {
   ) { }
 
   async openSocial(network: string, fab: HTMLIonFabElement) {
+   
+      window.open('fb:' + '//jbarchitectsandengineers/');
+
     const loading = await this.loadingCtrl.create({
       message: `Posting to ${network}`,
       duration: (Math.random() * 1000) + 500
