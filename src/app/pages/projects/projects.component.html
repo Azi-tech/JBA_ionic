@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Projects</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select>
+      <ion-option value="f">Female</ion-option>
+      <ion-option value="m">Male</ion-option>
+    </ion-select>
+  </ion-item> -->
+  <ion-item>
+    <ion-label>Catagory</ion-label>
+    <ion-select interface="popover" value="all" [ngModel]="catagory" #c (ionChange)="catagoryChange(c.value)">
+      <ion-select-option value="all">All</ion-select-option>
+      <ion-select-option value="interior">Interior</ion-select-option>
+      <ion-select-option value="exterior">Exterior</ion-select-option>
+      <ion-select-option value="consultant">Consultant</ion-select-option>
+      <ion-select-option value="plan">Plan</ion-select-option>
+
+    </ion-select>
+  </ion-item>
+  <ion-grid>
+    <ion-row>
+      <!-- <ion-col size="6">
+        <ion-card class="card-color1">
+          <ion-icon name="ribbon-outline" class="card-icon"></ion-icon>
+          <h6>SUSTAINABLE DESIGN</h6>
+        </ion-card>
+      </ion-col> -->
+      <ion-col size="6" size-md="3"  *ngFor="let project of projectList" [routerLink]="['detail',project.id]">
+        <img src="{{baseUrl+project.image}}" width="90%" height="150px"/>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+ 
+</ion-content>

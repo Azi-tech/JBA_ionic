@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{projectDetails?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="margin-top: 50px;">
+    <img alt="project image" src="{{baseUrl+projectDetails?.image}}" width="100%"/>
+  </div>
+ 
+
+</ion-content>

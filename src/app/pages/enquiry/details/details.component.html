@@ -1,0 +1,134 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
+    </ion-buttons>
+    <ion-title style="text-transform: uppercase;">{{catagory}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- <ion-item>
+    <ion-label position="floating">Floating Label</ion-label>
+    <ion-input></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Summary</ion-label>
+    <ion-textarea
+
+      value="Ionic enables developers to build performant, high-quality mobile apps.">
+    </ion-textarea>
+  </ion-item> -->
+  <form #interiorForm="ngForm"  novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating" color="primary">Name</ion-label>
+        <ion-input [(ngModel)]="username" name="username" type="text" #usernameRef="ngModel" spellcheck="false" autocapitalize="off"
+          required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger">
+        <!-- <p [hidden]="usernameRef.valid || submitted == false" class="ion-padding-start">
+          Name is required
+        </p> -->
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating" color="primary">Phone Number</ion-label>
+        <ion-input [(ngModel)]="phone" name="phone" type="number" #phoneRef="ngModel" required>
+        </ion-input>
+      </ion-item>
+
+      <ion-text color="danger">
+        <!-- <p [hidden]="phoneRef.valid || submitted == false" class="ion-padding-start">
+          Phone No is required
+        </p> -->
+      </ion-text>
+
+      <ion-item *ngIf="catagory == 'interior'">
+        <ion-label position="floating" color="primary">Interior Detail</ion-label>
+   
+        <ion-textarea [(ngModel)]="interiorDetail" name="interiorDetail"  #interiorDetailRef="ngModel" required
+        value="Ionic enables developers to build performant, high-quality mobile apps.">
+      </ion-textarea>
+      </ion-item>
+      
+
+      <ion-text color="danger">
+        <!-- <p [hidden]="interiorDetailRef.valid || submitted == false" class="ion-padding-start">
+          Interior Detail is required
+        </p> -->
+      </ion-text>
+
+      <ion-item *ngIf="catagory == 'exterior'">
+        <ion-label position="floating" color="primary">Exterior Detail</ion-label>
+   
+        <ion-textarea [(ngModel)]="exteriorDetail" name="exteriorDetail"  #exteriorDetailRef="ngModel" required
+        value="Ionic enables developers to build performant, high-quality mobile apps.">
+      </ion-textarea>
+      </ion-item>
+      
+
+      <ion-text color="danger">
+        <!-- <p [hidden]="exteriorDetailRef.valid || submitted == false" class="ion-padding-start">
+          Exterior Detail is required
+        </p> -->
+      </ion-text>
+
+      <ion-item *ngIf="catagory == 'consultant'">
+        <ion-label position="floating" color="primary">Consultant Detail</ion-label>
+   
+        <ion-textarea [(ngModel)]="consultantDetail" name="consultantDetail"  #consultantDetailRef="ngModel" required
+        value="Ionic enables developers to build performant, high-quality mobile apps.">
+      </ion-textarea>
+      </ion-item>
+      
+
+      <ion-text color="danger">
+        <!-- <p [hidden]="consultantDetailRef.valid || submitted == false" class="ion-padding-start">
+          consultantDetail Detail is required
+        </p> -->
+      </ion-text>
+
+      <ion-item *ngIf="catagory == 'planning'">
+        <ion-label position="floating" color="primary">Planing Detail</ion-label>
+   
+        <ion-textarea [(ngModel)]="planingDetail" name="planingDetail"  #planingDetailRef="ngModel" required
+        value="Ionic enables developers to build performant, high-quality mobile apps.">
+      </ion-textarea>
+      </ion-item>
+      
+
+      <ion-text color="danger">
+        <!-- <p [hidden]="planingDetailRef.valid || submitted == false" class="ion-padding-start">
+          consultantDetail Detail is required
+        </p> -->
+      </ion-text>
+
+      <ion-item>
+        <ion-label position="floating" color="primary">Comment</ion-label>
+   
+        <ion-textarea [(ngModel)]="comment" name="comment"  #commentRef="ngModel" required
+        value="Ionic enables developers to build performant, high-quality mobile apps.">
+      </ion-textarea>
+      </ion-item>
+
+      <ion-text color="danger">
+        <!-- <p [hidden]="commentRef.valid || submitted == false" class="ion-padding-start">
+          Comment is required
+        </p> -->
+      </ion-text>
+    </ion-list>
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="submitInterior(interiorForm)" type="submit" expand="block">Submit</ion-button>
+      </ion-col>
+      <ion-col>
+        <!-- <ion-button  color="light" expand="block">Back</ion-button> -->
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
